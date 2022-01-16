@@ -10,9 +10,7 @@ class QuasselBot(QuasselClient):
         super().__init__(config)
         self.pushNotification = None
         self.plugins = []
-        self.defaultPlugins = [
-            'logger',
-        ]
+        self.defaultPlugins = []
 
     @property
     def pluginsToLoad(self):
@@ -28,6 +26,7 @@ class QuasselBot(QuasselClient):
             return
         
         try:
+            self.plugins = []
             pluginModuleName = 'plugin_' + pluginName
             loader = SourceFileLoader(pluginModuleName, pluginFilepath)
             pluginModule = loader.load_module()

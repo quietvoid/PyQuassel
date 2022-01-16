@@ -45,8 +45,8 @@ class QuasselQDataStream(QDataStream):
 class QuasselClient:
     def __init__(self, config=None):
         self.clientName = 'QuasselClient.py'
-        self.clientVersion = '2'
-        self.clientDate = 'Jun 25 2018 21:00:00'
+        self.clientVersion = '3'
+        self.clientDate = 'Jan 16 2022 21:00:00'
 
         self.config = config
         self.running = False
@@ -210,7 +210,7 @@ class QuasselClient:
         # print(output)
 
     def sendInput(self, bufferId, message):
-        print('sendInput', bufferId, message)
+        #print('sendInput', bufferId, message)
         bufferInfo = self.buffers[bufferId]
         l = [
             RequestType.RpcCall,
@@ -218,7 +218,7 @@ class QuasselClient:
             QUserType('BufferInfo', bufferInfo),
             message,
         ]
-        pprint(l)
+        #pprint(l)
         self.stream.write(l)
 
     def sendHeartBeat(self):

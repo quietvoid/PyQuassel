@@ -104,10 +104,17 @@ class QDataStream:
         Qt_4_3 = 9 #  Version 9 (Qt 4.3)
         Qt_4_4 = 10 #  Version 10 (Qt 4.4)
         Qt_4_5 = 11 #  Version 11 (Qt 4.5)
-        Qt_4_6 = 12 #  Version 12 (Qt 4.6, Qt 4.7, Qt 4.8)
+        Qt_4_6 = 12 #  Version 12 (Qt 4.6, Qt 4.7, Qt 4.8, Qt 4.9)
+        Qt_5_0 = 13 #  Version 13, (Qt 5.0)
+        Qt_5_1 = 14 #  Version 14, (Qt 5.1)
+        Qt_5_2 = 15 #  Version 15, (Qt 5.2, Qt 5.3)
+        Qt_5_4 = 16 #  Version 16, (Qt 5.4, Qt 5.5)
+        Qt_5_6 = 17 #  Version 17, (Qt 5.6 to 5.11)
+        Qt_5_12 = 18 #  Version 18, (Qt 5.12)
+        Qt_5_13 = 19 #  Version 19, (Qt 5.13 to 5.15)
     
     def __init__(self, device=None):
-        self.version = QDataStream.Version.Qt_4_6
+        self.version = QDataStream.Version.Qt_5_13
         self.status = QDataStream.Status.Ok
         self.device = device
 

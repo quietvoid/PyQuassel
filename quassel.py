@@ -24,9 +24,11 @@ class Message(dict):
     class Flag(IntEnum):
         NoFlags = 0x00
         Self = 0x01
-        Highlight = 0x02 # Set clientside: https://github.com/quassel/quassel/blob/b49c64970b6237fc95f8ca88c8bb6bcf04c251d7/src/qtui/qtuimessageprocessor.cpp#L112
+        Highlight = 0x02  # Set clientside: https://github.com/quassel/quassel/blob/b49c64970b6237fc95f8ca88c8bb6bcf04c251d7/src/qtui/qtuimessageprocessor.cpp#L112
         Redirected = 0x04
         ServerMsg = 0x08
+        StatusMsg = 0x10
+        Ignored = 0x20
         Backlog = 0x80
 
     @property
