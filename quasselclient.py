@@ -157,8 +157,12 @@ class QuasselClient:
             functionName = data[1]
             if functionName == b'2displayMsg(Message)':
                 message = data[2]
-                # print(message)
-                self.onMessageReceived(message)
+
+                if message and 'flags' in message:
+                    if message['flags'] != Message.Flag.Ignored:
+                        # print(message)
+                        self.onMessageReceived(message)
+
                 return
 
         elif requestType == RequestType.InitData:
